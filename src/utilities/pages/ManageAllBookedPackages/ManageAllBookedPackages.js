@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 
 const ManageAllBookedPackages = () => {
   const [bookedPackages, setBookedPackages] = useState([]);
