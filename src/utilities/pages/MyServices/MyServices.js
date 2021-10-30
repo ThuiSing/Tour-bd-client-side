@@ -8,7 +8,9 @@ const MyServices = () => {
   const [myServices, setMyServices] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/bookedPackage/${user.email}`)
+      .get(
+        `https://glacial-temple-73891.herokuapp.com/bookedPackage/${user.email}`
+      )
       .then((res) => {
         setMyServices(res.data);
       });
@@ -20,14 +22,18 @@ const MyServices = () => {
     const confirm = window.confirm("Are you Sure to cancel this Booking ?");
 
     confirm &&
-      axios.delete(`http://localhost:5000/bookedPackage/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          const existServices = myServices.filter(
-            (service) => service._id !== id
-          );
-          setMyServices(existServices);
-        }
-      });
+      axios
+        .delete(
+          `hhttps://glacial-temple-73891.herokuapp.com/bookedPackage/${id}`
+        )
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            const existServices = myServices.filter(
+              (service) => service._id !== id
+            );
+            setMyServices(existServices);
+          }
+        });
   };
   return (
     <div className="container mx-auto py-12">

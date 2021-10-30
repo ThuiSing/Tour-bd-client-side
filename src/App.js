@@ -41,9 +41,9 @@ function App() {
             <Route path="/services">
               <Services showAll={true} />
             </Route>
-            <Route path="/all-booked-packages">
+            <PrivateRoute path="/all-booked-packages">
               <ManageAllBookedPackages />
-            </Route>
+            </PrivateRoute>
           </Switch>
 
           <Footer />

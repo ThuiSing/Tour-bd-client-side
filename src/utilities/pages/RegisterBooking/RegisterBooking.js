@@ -18,9 +18,11 @@ const RegisterBooking = () => {
   } = useForm();
   // load data
   useEffect(() => {
-    axios.get(`http://localhost:5000/packages/${id}`).then((res) => {
-      setService(res.data);
-    });
+    axios
+      .get(`https://glacial-temple-73891.herokuapp.com/packages/${id}`)
+      .then((res) => {
+        setService(res.data);
+      });
   }, []);
 
   const onSubmit = (data) => {
@@ -29,13 +31,15 @@ const RegisterBooking = () => {
     data.BookedPackage = service;
 
     confirm &&
-      axios.post("http://localhost:5000/bookedPackage", data).then((res) => {
-        if (res.data.insertedId) {
-          alert("Successfully booked");
-          history.push("/myPackages");
-          console.log(data);
-        }
-      });
+      axios
+        .post("https://glacial-temple-73891.herokuapp.com/bookedPackage", data)
+        .then((res) => {
+          if (res.data.insertedId) {
+            alert("Successfully booked");
+            history.push("/myPackages");
+            console.log(data);
+          }
+        });
   };
   // console.log(bookPackage);
 

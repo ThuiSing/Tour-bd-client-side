@@ -8,14 +8,14 @@ const ManageAllBookedPackages = () => {
   //get all Booked items
   useEffect(() => {
     axios
-      .get("http://localhost:5000/bookedPackage")
+      .get("https://glacial-temple-73891.herokuapp.com/bookedPackage")
       .then((res) => setBookedPackages(res.data));
   }, []);
 
   //update status
   const updateStatus = (id) => {
     // console.log(id);
-    // axios.put(`http://localhost:5000/bookedPackage/${id}`,).then((res) => {
+    // axios.put(`https://glacial-temple-73891.herokuapp.com/bookedPackage/${id}`,).then((res) => {
     //   console.log(res);
     // });
   };
@@ -25,15 +25,19 @@ const ManageAllBookedPackages = () => {
     const confirm = window.confirm("Are you Sure to cancel this Booking ?");
 
     confirm &&
-      axios.delete(`http://localhost:5000/bookedPackage/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          const existServices = bookedPackages.filter(
-            (service) => service._id !== id
-          );
-          setBookedPackages(existServices);
-        }
-        // console.log(res);
-      });
+      axios
+        .delete(
+          `https://glacial-temple-73891.herokuapp.com/bookedPackage/${id}`
+        )
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            const existServices = bookedPackages.filter(
+              (service) => service._id !== id
+            );
+            setBookedPackages(existServices);
+          }
+          // console.log(res);
+        });
   };
   //   console.log(bookedPackages);
   return (

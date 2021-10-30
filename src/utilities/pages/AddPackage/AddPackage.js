@@ -12,12 +12,14 @@ const AddService = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/packages", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Successfully added on package");
-        reset();
-      }
-    });
+    axios
+      .post("https://glacial-temple-73891.herokuapp.com/packages", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Successfully added on package");
+          reset();
+        }
+      });
   };
   return (
     <div className="flex justify-center item-center py-12">

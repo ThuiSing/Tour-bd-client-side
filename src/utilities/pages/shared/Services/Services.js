@@ -7,7 +7,7 @@ const Services = ({ showAll }) => {
   // console.log(showAll);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/packages")
+      .get("https://glacial-temple-73891.herokuapp.com/packages")
       .then((res) => setServices(res.data));
   }, []);
   return (
