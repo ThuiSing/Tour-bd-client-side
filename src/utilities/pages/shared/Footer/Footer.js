@@ -5,9 +5,9 @@ import img3 from "../../../images/paymentImage/PayPal-Logo-2014-present.jpg";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-primary pt-36 pb-12">
-      <div className="container mx-auto grid grid-cols-4">
-        <div>
+    <footer className="bg-primary text-primary pt-36 pb-12 px-3 md:px-0">
+      <div className="container mx-auto grid md:grid-cols-4">
+        <div className="mb-10 md:mb-0">
           <h1 className="text-3xl font-bold mb-4">TOURBD</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="px-5">
+        <div className="md:px-5 mb-8 md:mb-0">
           <div>
             <h2 className="text-2xl font-semibold">Contact us</h2>
           </div>
@@ -114,7 +114,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="px-5">
+        <div className="md:px-5 mb-8 md:mb-0">
           <h2 className="text-2xl font-semibold">Support</h2>
           <div className="mt-4">
             <Link to="/home">
@@ -127,7 +127,7 @@ const Footer = () => {
         </div>
         <div>
           <h2 className="text-2xl font-semibold">We Accepts : </h2>
-          <div className="grid grid-cols-2 gap-7 mt-4">
+          <div className="grid md:grid-cols-2 gap-7 mt-4">
             <div>
               <img className="rounded-3xl" width="150" src={img1} alt="" />
             </div>

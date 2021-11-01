@@ -42,20 +42,40 @@ const RegisterBooking = () => {
         });
   };
   // console.log(bookPackage);
+  // const date = new Date();
+  // // console.log(date.getDate());
+  // let month;
+  // if (date.getMonth() < 10) {
+  //   month = parseInt("0" + date.getMonth());
+  // } else {
+  //   month = date.getMonth();
+  // }
+  // let crrDate;
+  // if (date.getDate() < 10) {
+  //   crrDate = "0" + date.getDate();
+  // } else {
+  //   crrDate = date.getDate();
+  // }
+  // console.log(month);
 
   return (
-    <div className="grid grid-cols-2 container mx-auto">
+    <div className="grid md:grid-cols-2 container space-y-9 px-3 md:px-0 mx-auto py-12">
       <div>
         <div>
           <img src={service.img} alt="" />
         </div>
-        <div>
-          <h2>{service.name}</h2>
-          <h2>{service.description}</h2>
-          <h2>{service.price}</h2>
+        <div className="mt-5">
+          <h3 className="text-3xl text-secondary font-bold ">
+            <i className="fas fa-map-marker-alt mr-3 "></i>
+            {service.name}
+          </h3>
+          <p className="text-gray-700 my-3">{service.description}</p>
+          <h2 className="text-2xl font-semibold text-secondary ">
+            ${service.price}/ person
+          </h2>
         </div>
       </div>
-      <div className="p-2 bg-red-100">
+      <div className="p-2 bg-secondary px-5 py-8">
         <h3 className="font-semibold text-2xl my-4">Book This Package</h3>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div>
@@ -82,7 +102,7 @@ const RegisterBooking = () => {
             </span>
           </div>
           <div>
-            <label className="font-medium">Name </label>
+            <label className="font-medium">Number </label>
             <input
               className="bg-gray-100 w-full p-3"
               type="number"
@@ -91,6 +111,19 @@ const RegisterBooking = () => {
             />
             <span className="text-red-500">
               {errors.number?.type === "required" && "Number is required"}
+            </span>
+          </div>
+          <div>
+            <label className="font-medium">Date</label>
+            <input
+              className="bg-gray-100 w-full p-3"
+              type="date"
+              // defaultValue={`${date.getFullYear()}-${month}-${crrDate}`}
+              {...register("date", { required: true })}
+              placeholder="Enter number"
+            />
+            <span className="text-red-500">
+              {errors.date?.type === "required" && "Date is required"}
             </span>
           </div>
           <div>

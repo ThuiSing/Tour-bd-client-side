@@ -11,6 +11,7 @@ import RegisterBooking from "./utilities/pages/RegisterBooking/RegisterBooking";
 import Footer from "./utilities/pages/shared/Footer/Footer";
 import Header from "./utilities/pages/shared/Header/Header";
 import Services from "./utilities/pages/shared/Services/Services";
+import UpdateBookedManagItem from "./utilities/pages/UpdateBookedManagItem/UpdateBookedManagItem";
 
 function App() {
   return (
@@ -41,8 +42,14 @@ function App() {
             <Route path="/services">
               <Services showAll={true} />
             </Route>
-            <PrivateRoute path="/all-booked-packages">
+            <PrivateRoute exact path="/all-booked-packages">
               <ManageAllBookedPackages />
+            </PrivateRoute>
+            <PrivateRoute
+              exact
+              path="/all-booked-packages/update-booked-item/:id"
+            >
+              <UpdateBookedManagItem />
             </PrivateRoute>
           </Switch>
 

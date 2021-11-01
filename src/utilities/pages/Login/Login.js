@@ -20,13 +20,15 @@ const Login = () => {
   };
   return (
     <div className="bg-secondary min-h-screen flex justify-center items-center">
-      <div className="bg-white md:w-1/3 text-center py-12 rounded-lg px-4">
+      <div className="bg-white md:w-1/3 w-full text-center py-16 md:py-12 rounded-lg px-4">
         <div className="mb-4">
           <Link to="/">
-            <h3 className="text-5xl font-bold cursor-pointer">TOURBD</h3>
+            <h3 className="text-5xl font-bold cursor-pointer text-secondary">
+              TOURBD
+            </h3>
           </Link>
         </div>
-        <h2 className="font-semibold text-2xl mb-7"> Log in Here</h2>
+        <h2 className="font-semibold md:text-2xl mb-7 text-xl">Log in Here</h2>
         {/* <span className="text-red-400 font-semibold">{getError}</span> */}
         <div
           onClick={handleGoogleLongin}
@@ -38,7 +40,7 @@ const Login = () => {
             src={googleImg}
             alt="Google icon"
           />
-          <h4 className="font-medium ">Continue with google </h4>
+          <h4 className="font-medium">Continue with google </h4>
         </div>
       </div>
     </div>

@@ -24,60 +24,64 @@ const Header = () => {
         sticky && "sticky top-0 shadow-md"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center px-2 md:px-0">
         <div>
           <h1 className="text-2xl uppercase font-bold">TOURBD</h1>
         </div>
         <div className=" w-1/2 flex items-center flex justify-end items-center">
           {user.email ? (
-            <div className="flex items-center">
-              <NavLink
-                exact
-                activeClassName="text-btnTwo"
-                to="/"
-                className="px-4 py-2 font-semibold"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                activeClassName="text-btnTwo"
-                to="/services"
-                className="px-4 py-2 font-semibold "
-              >
-                Packages
-              </NavLink>
-              <NavLink
-                activeClassName="text-btnTwo"
-                to="/addPackage"
-                className="px-4 py-2 font-semibold"
-              >
-                Add Package
-              </NavLink>
-              <NavLink
-                activeClassName="text-btnTwo"
-                to="/myPackages"
-                className="px-4 py-2 font-semibold"
-              >
-                My Packages
-              </NavLink>
+            <div className="hidden lg:inline-block">
+              <div className="flex items-center ">
+                <NavLink
+                  exact
+                  activeClassName="text-btnTwo"
+                  to="/"
+                  className="px-4 py-2 font-semibold"
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  activeClassName="text-btnTwo"
+                  to="/services"
+                  className="px-4 py-2 font-semibold "
+                >
+                  Packages
+                </NavLink>
+                <NavLink
+                  activeClassName="text-btnTwo"
+                  to="/addPackage"
+                  className="px-4 py-2 font-semibold"
+                >
+                  Add Package
+                </NavLink>
+                <NavLink
+                  activeClassName="text-btnTwo"
+                  to="/myPackages"
+                  className="px-4 py-2 font-semibold"
+                >
+                  My Packages
+                </NavLink>
+              </div>
             </div>
           ) : (
-            <div className="flex items-center">
-              <NavLink
-                exact
-                activeClassName="text-btnTwo"
-                to="/"
-                className="px-4 py-2 font-semibold"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                activeClassName="text-btnTwo"
-                to="/services"
-                className="px-4 py-2 font-semibold "
-              >
-                Packages
-              </NavLink>
+            <div className="hidden lg:inline-block">
+              <div className="flex items-center ">
+                <NavLink
+                  exact
+                  activeClassName="text-btnTwo"
+                  to="/"
+                  className="px-4 py-2 font-semibold"
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  activeClassName="text-btnTwo"
+                  to="/services"
+                  className="px-4 py-2 font-semibold "
+                >
+                  Packages
+                </NavLink>
+              </div>
             </div>
           )}
 
@@ -86,12 +90,10 @@ const Header = () => {
             onClick={handleUserBtn}
             className="flex items-center ml-10 cursor-pointer"
           >
-            <div
-              className={`bg-white rounded-full ${user.email || "p-1"} ml-2`}
-            >
+            <div className={`bg-white rounded-full ${user.email || "p-1"} `}>
               {user.email ? (
                 <img
-                  className="rounded-full"
+                  className="rounded-full inline-block"
                   width="50"
                   src={user.photoURL}
                   alt=""
@@ -114,19 +116,51 @@ const Header = () => {
               )}
             </div>
             {openUserInfo && (
-              <div className="bg-primary w-1/5 text-center absolute top-full right-0 py-3 shadow-sm z-50">
+              <div className="bg-primary lg:w-1/5 w-1/2 text-center absolute top-full right-0 py-3 shadow-sm z-50 shadow-lg">
                 {user.email ? (
                   <div>
                     <h2 className="text-2xl font-semibold mb-3">
                       {user.displayName}
                     </h2>
-                    <NavLink
-                      activeClassName="text-btnTwo"
-                      to="/all-booked-packages"
-                      className="px-4 py-2 font-semibold hover:text-btnTwo mb-2 block"
-                    >
-                      Manage All Packages
-                    </NavLink>
+                    <div className="flex flex-col space-y-2 mb-6">
+                      <NavLink
+                        exact
+                        activeClassName="text-btnTwo"
+                        to="/"
+                        className="px-4 py-2 font-semibold lg:hidden"
+                      >
+                        Home
+                      </NavLink>
+                      <NavLink
+                        activeClassName="text-btnTwo"
+                        to="/services"
+                        className="px-4 py-2 font-semibold lg:hidden "
+                      >
+                        Packages
+                      </NavLink>
+                      <NavLink
+                        activeClassName="text-btnTwo"
+                        to="/addPackage"
+                        className="px-4 py-2 font-semibold lg:hidden"
+                      >
+                        Add Package
+                      </NavLink>
+                      <NavLink
+                        activeClassName="text-btnTwo"
+                        to="/myPackages"
+                        className="px-4 py-2 font-semibold lg:hidden"
+                      >
+                        My Packages
+                      </NavLink>
+                      <NavLink
+                        activeClassName="text-btnTwo"
+                        to="/all-booked-packages"
+                        className="px-4 py-2 font-semibold hover:text-btnTwo mb-2 block"
+                      >
+                        Manage All Packages
+                      </NavLink>
+                    </div>
+
                     <button
                       onClick={userSignOut}
                       className="bg-btn w-32 py-2 block mx-auto  mb-2 hover:bg-white rounded hover:text-btnTwo transition duration-400"
@@ -136,6 +170,23 @@ const Header = () => {
                   </div>
                 ) : (
                   <div>
+                    <div className="flex flex-col mb-3">
+                      <NavLink
+                        exact
+                        activeClassName="text-btnTwo"
+                        to="/"
+                        className="px-4 py-2 font-semibold lg:hidden"
+                      >
+                        Home
+                      </NavLink>
+                      <NavLink
+                        activeClassName="text-btnTwo"
+                        to="/services"
+                        className="px-4 py-2 font-semibold lg:hidden "
+                      >
+                        Packages
+                      </NavLink>
+                    </div>
                     <Link to="/login">
                       <button className="bg-btn w-32 py-2 block mx-auto  mb-2 hover:bg-white hover:text-btnTwo transition duration-400">
                         Login

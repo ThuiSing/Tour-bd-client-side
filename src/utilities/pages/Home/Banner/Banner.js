@@ -32,19 +32,21 @@ const Banner = () => {
         </div>
       </Carousel>
       <div className="banner-abs flex justify-center items-center">
-        <div className="space-y-4 text-center">
-          <h2 className="text-7xl font-semibold uppercase text-btnTwo">
+        <div className="space-y-2 md:space-y-4 text-center">
+          <h2 className="text-2xl md:text-7xl font-semibold uppercase text-btnTwo">
             Welcome to <span className="font-bold text-btn">TOURBD</span>
           </h2>
-          <h2 className="text-2xl font-semibold text-btnTwo">
+          <h2 className="text-md md:text-2xl font-semibold text-btnTwo ">
             Where u can book amazing tour from here
           </h2>
-          <a
-            href="#contactUs"
-            className="bg-btn inline-block text-secondary font-medium rounded hover:bg-primary hover:text-btnTwo transition-all px-5 py-3"
-          >
-            Contact us
-          </a>
+          <div>
+            <a
+              href="#contactUs"
+              className="bg-btn inline-block text-secondary font-medium rounded hover:bg-primary hover:text-btnTwo transition-all p-1 md:px-5 md:py-3"
+            >
+              Contact us
+            </a>
+          </div>
         </div>
       </div>
     </div>

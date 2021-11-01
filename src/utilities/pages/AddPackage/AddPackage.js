@@ -23,8 +23,8 @@ const AddService = () => {
   };
   return (
     <div className="flex justify-center item-center py-12">
-      <div className=" w-3/5 bg-secondary py-12 px-6 rounded">
-        <h2 className="text-4xl font-semibold uppercase mb-6">
+      <div className="md:w-3/5 bg-secondary py-12 px-6 rounded">
+        <h2 className="text-2xl md:text-4xl font-semibold uppercase mb-6">
           Add More Package :
         </h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
