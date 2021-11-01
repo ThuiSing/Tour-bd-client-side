@@ -22,7 +22,7 @@ const Service = ({ service }) => {
           <i className="fas fa-map-marker-alt mr-3 "></i>
           {name}
         </h3>
-        <p className="text-sm md:text-md">{description}</p>
+        <p className="text-sm md:text-md">{description.slice(0, 200)}</p>
         <h4 className="font-medium text-md md:text-xl">
           <i className="fas fa-star text-yellow-500 mr-2"></i>
           {rating}+ Ratings
