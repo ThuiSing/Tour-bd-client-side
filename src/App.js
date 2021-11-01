@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./utilities/context/AuthProvider";
 import AddPackage from "./utilities/pages/AddPackage/AddPackage";
+import ErrorPage from "./utilities/pages/ErrorPage/ErrorPage";
 import Home from "./utilities/pages/Home/Home/Home";
 import Login from "./utilities/pages/Login/Login";
 import ManageAllBookedPackages from "./utilities/pages/ManageAllBookedPackages/ManageAllBookedPackages";
@@ -51,6 +52,9 @@ function App() {
             >
               <UpdateBookedManagItem />
             </PrivateRoute>
+            <Route path="*">
+              <ErrorPage />
+            </Route>
           </Switch>
 
           <Footer />
